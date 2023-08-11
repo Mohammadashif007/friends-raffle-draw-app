@@ -34,6 +34,15 @@ window.onload = function () {
         }
     })
 
+    giveATry.addEventListener('click', () => {
+        if(participantName.length == 0){
+            alert("Please input some name first");
+        }
+        else {
+            let shuffleName = shuffle(participantName);
+        }
+    })
+
 };
 
 
@@ -44,3 +53,24 @@ function createListItem(name){
     p.innerHTML = name;
     return p;
 }
+
+
+function shuffle(arr){
+    let shuffledArr = [...arr];
+    for(let i = shuffledArr.length-1; i > 0; i--){
+        let rand = Math.floor(Math.random() * (i+1));
+        let temp = shuffledArr[rand];
+        shuffledArr[rand] = shuffledArr[i];
+        shuffledArr[i] = temp;
+    }
+    return shuffledArr
+}
+
+
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
